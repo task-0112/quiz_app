@@ -3,3 +3,4 @@ generate_project_summary.py
 venv
 __pycache__/
 .summaryignore
+quiz_app_project_summary.txt
