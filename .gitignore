@@ -1,6 +1,6 @@
 .env
 generate_project_summary.py
-venv
+.venv
 __pycache__/
 .summaryignore
 quiz_app_project_summary.txt
