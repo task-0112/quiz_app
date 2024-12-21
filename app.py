@@ -88,14 +88,6 @@ def main():
             value="中級"
         )
 
-        st.markdown("---")
-        st.markdown("### 📊 成績")
-        if st.session_state.total_questions > 0:
-            accuracy = (st.session_state.correct_answers / st.session_state.total_questions) * 100
-            st.progress(accuracy / 100)
-            st.markdown(f"正答率: {accuracy:.1f}%")
-            st.markdown(f"回答数: {st.session_state.total_questions}")
-
     # メインコンテンツ
     if 'quiz_data' not in st.session_state:
         st.info("👈 サイドバーでジャンルを選択し、クイズを始めましょう！")
@@ -145,16 +137,9 @@ def main():
 
     # 結果とフィードバックの表示
     if st.session_state.result and st.session_state.feedback:
-        st.markdown("---")
-        is_correct = "正解" in st.session_state.result
-        result_class = "correct" if is_correct else "incorrect"
-        
-        st.markdown(f"""
-            <div class='feedback-box {result_class}'>
-                <h3>{'🎉 正解！' if is_correct else '😢 不正解'}</h3>
-                <p>{st.session_state.result}</p>
-            </div>
-        """, unsafe_allow_html=True)
+        st.markdown("---")        
+        st.markdown("### 結果発表")
+        st.info(st.session_state.result)
         
         st.markdown("### 💡 フィードバック")
         st.info(st.session_state.feedback)
